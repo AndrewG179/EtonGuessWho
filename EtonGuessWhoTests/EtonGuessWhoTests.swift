@@ -1,16 +1,12 @@
-//
-//  EtonGuessWhoTests.swift
-//  EtonGuessWhoTests
-//
-//  Created by Андрей Горяинов on 16.01.2025.
-//
+import XCTest
+@testable import EtonGuessWho
 
-import Testing
-
-struct EtonGuessWhoTests {
-
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+final class BoardTests: XCTestCase {
+    func testFindAllPeopleWithEyeColor() {
+        let board = Board.createDummyBoard()
+        
+        let brownEyedPeople = board.findAllPeople(withEyeColor: .brown)
+        
+        XCTAssertEqual(brownEyedPeople.count, 1)
     }
-
 }
